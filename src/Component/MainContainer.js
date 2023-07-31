@@ -4,9 +4,9 @@ import VideosContainer from './VideosContainer'
 
 const MainContainer = () => {
   return (
-    <div  className='shadow w-full'>
-        <ButtonsList/>
-        <VideosContainer/>
+    <div  className='shadow w-full className="fixed"'>
+        <ButtonsList />
+        <VideosContainer />
        
     </div>
   )
