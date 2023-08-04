@@ -25,10 +25,10 @@ const appRouter = createBrowserRouter([{
 function App() {
   return (
     <Provider store={store}>
-    <div className="App m-3">
-      <Head/>
+    <div className="App m-3 mt-0">
+      <Head />
       <RouterProvider router={appRouter}>
-      <Body/>
+      <Body className="mt-15"/>
       </RouterProvider>
     </div>
     </Provider>

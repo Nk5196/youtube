@@ -15,9 +15,9 @@ const Sidebar = () => {
   
   
   return (
-    <div className='shadow w-48'>
+    <div className='shadow w-48 mt-20 bg-white'>
       <ul className=''>
-        <li className='py-2 flex px-2'><Link className='flex'><AiFillHome className='w-7 h-7 pr-2' /> Home</Link></li>
+        <li className='py-2 flex px-2'><Link to={"/"} className='flex'><AiFillHome className='w-7 h-7 pr-2' /> Home</Link></li>
         <li className='py-2 flex px-2'><MdSubscriptions className='w-7 h-7 pr-2' />Supscription</li>
         <li className='py-2 flex px-2'><FiTrendingUp className='w-7 h-7 pr-2' />Trending</li>
         <li className='py-2 flex px-2'><BsMusicNoteBeamed className='w-7 h-7 pr-2' />Music</li>
