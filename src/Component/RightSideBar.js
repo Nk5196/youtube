@@ -19,10 +19,12 @@ const RightSideBar = () => {
         setVideos(jsonData.items);
     };
 
+    const shiftedVideos = videos.slice(2);
+
     return ( videos.length == 0 ? <Shimmer/> :
 
-        <div className=' flex flex-wrap w-64 ml-1'>
-            {videos.map((video) => <Link to={"/watch?v=" + video.id}>
+        <div className=' flex flex-wrap w-64 ml-1 mt-14'>
+            {shiftedVideos.map((video) => <Link to={"/watch?v=" + video.id}>
                 
               <div key={video.id} className='w-64 m-1'>     
                 <div>
