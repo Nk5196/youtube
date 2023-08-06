@@ -3,6 +3,8 @@ import { useDispatch } from 'react-redux';
 import { closeMenu } from '../Utils/appSlice';
 import { useSearchParams } from 'react-router-dom';
 import RightSideBar from './RightSideBar';
+import CommentContainer from './CommentContainer';
+import WatchScreenShimmer from './WatchScreenShimmer';
 
 const WatchPage = ({ info }) => {
   const dispatch = useDispatch();
@@ -18,20 +20,27 @@ const WatchPage = ({ info }) => {
     dispatch(closeMenu());
   }, []);
 
-  return (
-    <div className='flex p-1'>
-      <iframe
-        width="1120"
-        height="630"
-        src={"https://www.youtube.com/embed/" + videoId}
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowFullScreen
-      ></iframe>
-      <div>
-        <RightSideBar channelId={channelId}/>
+  return ( 
+    <div className='flex flex-col'>
+      <div className='flex p-1'>
+        <div>
+          <iframe
+            width="1120"
+            height="630"
+            src={"https://www.youtube.com/embed/" + videoId}
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          ></iframe>
+          <CommentContainer />
+         
+        </div>
+        <div>
+          <RightSideBar channelId={channelId} />
+        </div>
       </div>
+
     </div>
   );
 };

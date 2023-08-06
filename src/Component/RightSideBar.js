@@ -13,7 +13,7 @@ const RightSideBar = () => {
     }, []);
 
     const LoadVideos = async () => {
-        const data = await fetch( 'https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=UC_x5XG1OV2P6uZZ5FSM9Ttw&maxResults=25&key=AIzaSyCBLEjHrYfzVX6el9k1L6HXLoTXhnGBXZ4');
+        const data = await fetch( 'https://youtube.googleapis.com/youtube/v3/playlists?part=snippet%2CcontentDetails&channelId=UC_x5XG1OV2P6uZZ5FSM9Ttw&maxResults=25&key=AIzaSyAzVZCPrYXH-hNwt_KEXl5aAGa6FEpSb6c');
         const jsonData = await data.json();
         console.log("jsonData", jsonData.items);
         setVideos(jsonData.items);

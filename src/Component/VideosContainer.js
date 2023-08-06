@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from 'react';
+// No need to import React from 'react'
+
+import { useEffect, useState } from 'react';
 import { youtubeApi } from '../Utils/Config';
 import VIdeosCard from './VIdeosCard';
 import { Link } from 'react-router-dom';
