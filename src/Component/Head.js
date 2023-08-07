@@ -5,9 +5,9 @@ import { GiHamburgerMenu } from 'react-icons/gi';
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from '../Utils/appSlice';
 import { Link } from 'react-router-dom';
-import { YOUTUBE_SEARCH_SUGG } from '../Utils/Config';
+import { YOUTUBE_SEARCH_SUGG, youtubeApi } from '../Utils/Config';
 import { cacheResults } from '../Utils/searchSlice';
-
+import { BtnResults } from '../Utils/Results';
 
 
 const Head = () => {
@@ -52,13 +52,20 @@ const Head = () => {
         }))
     };
 
+    const LoadVideos = async () => {
+        const data = await fetch(youtubeApi);
+        const jsonData = await data.json();
+        //console.log("jsonData", jsonData.items);
+        dispatch(BtnResults(jsonData.items));
+      };
+
     return (
         <div className='flex fixed bg-white w-full p-2 mt-0 justify-between'>
 
             <div className='flex gap-4 '>
                 <GiHamburgerMenu onClick={() => toggleMenuHandler()} className="w-8 h-7 mt-4" />
                 <div>
-                    <Link to="/">
+                    <Link to="/" onClick={LoadVideos}>
                         <img className="h-16" alt="youtube-logo" src='https://images.t3n.de/news/wp-content/uploads/2017/08/new-youtube-logo-2.jpg?class=hero-small' />
                         </Link>
                 </div>

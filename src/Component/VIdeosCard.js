@@ -2,8 +2,8 @@ const VIdeosCard = ({ info }) => {
     const { snippet, statistics } = info;
     const { channelTitle, title, thumbnails } = snippet;
 
-    console.log("info-->>", info);
-    console.log("snippet-->>", snippet);
+  //  console.log("info-->>", info);
+  //  console.log("snippet-->>", snippet);
 
     return (
         <>
@@ -14,7 +14,7 @@ const VIdeosCard = ({ info }) => {
               <div className="p-2">
                 <p className="text-2md font-semibold truncate ">{title}...</p>
                 <h2>{channelTitle}</h2>
-                <p>{Math.floor((statistics.viewCount)/1000)}K - View</p>
+                {/* <p>{Math.floor((statistics.viewCount)/1000)}K - View</p> */}
               </div>
            </div>
         </>
