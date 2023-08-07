@@ -58,9 +58,9 @@ const Head = () => {
             <div className='flex gap-4 '>
                 <GiHamburgerMenu onClick={() => toggleMenuHandler()} className="w-8 h-7 mt-4" />
                 <div>
-                    
+                    <Link to="/">
                         <img className="h-16" alt="youtube-logo" src='https://images.t3n.de/news/wp-content/uploads/2017/08/new-youtube-logo-2.jpg?class=hero-small' />
-                   
+                        </Link>
                 </div>
             </div>
             <div>

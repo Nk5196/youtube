@@ -3,11 +3,31 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {RouterProvider, createBrowserRouter} from 'react-router-dom'
+import MainContainer from './Component/MainContainer';
+import WatchPage from './Component/WatchPage';
 
+const appRouter = createBrowserRouter([{
+  path: "/",
+  element: <App/>,
+  children:[
+    {
+      path: "/",
+      element: <MainContainer/>
+    },
+    {
+      path: "/watch",
+      element: <WatchPage/>
+    }
+    
+  ]
+}]);
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+     <RouterProvider router={appRouter}>
+    <appRouter />
+    </RouterProvider>
   </React.StrictMode>
 );
 
